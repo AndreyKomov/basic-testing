@@ -43,14 +43,33 @@ describe('simpleCalculator tests', () => {
   });
 
   test('should exponentiate two numbers', () => {
-    // Write your test here
+    const data = {
+      a: 2,
+      b: 4,
+      action: Action.Exponentiate,
+    };
+    const result = simpleCalculator(data);
+    expect(result).toBe(16);
   });
 
   test('should return null for invalid action', () => {
-    // Write your test here
+    const invalidAction = 'invalid action';
+    const data = {
+      a: 100,
+      b: 10,
+      action: invalidAction,
+    };
+    const result = simpleCalculator(data);
+    expect(result).toBe(null);
   });
 
   test('should return null for invalid arguments', () => {
-    // Write your test here
+    const data = {
+      a: 'aa',
+      b: 10,
+      action: Action.Divide,
+    };
+    const result = simpleCalculator(data);
+    expect(result).toBe(null);
   });
 });
